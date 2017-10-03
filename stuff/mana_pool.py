@@ -1,16 +1,16 @@
 DEFAULT_POOL = {
-    'w': 0,
-    'u': 0,
-    'b': 0,
-    'r': 0,
-    'g': 0}
+    'W': 0,
+    'U': 0,
+    'B': 0,
+    'R': 0,
+    'G': 0}
 
 LANDS = {
-    'plains': 'w',
-    'island': 'u',
-    'swamp': 'b',
-    'mountain': 'r',
-    'forest': 'g'
+    'plains': 'W',
+    'island': 'U',
+    'swamp': 'B',
+    'mountain': 'R',
+    'forest': 'G'
 }
 
 class ManaError(Exception):
@@ -25,7 +25,7 @@ class ManaPool:
         self.pool[LANDS[land]] += 1
 
     def spend(self, cost):
-        for mana_type in ['w', 'u', 'b', 'r', 'g']:
+        for mana_type in ['W', 'U', 'B', 'R', 'G']:
             if self.pool[mana_type] - cost[mana_type] < 0:
                 raise ManaError(mana_type)
             else:
