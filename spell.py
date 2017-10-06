@@ -1,4 +1,4 @@
-from stuff.mana_pool import ManaPool, MANA_TYPES
+from .stuff.mana_pool import MANA_TYPES, ManaPool
 
 class PayError(Exception):
     def __init__(self, message):
@@ -17,12 +17,15 @@ def spell(mana_cost):
             for mana_type in MANA_TYPES:
                 cost[mana_type] = temp_mana_cost.count(mana_type)
                 temp_mana_cost = temp_mana_cost.replace(mana_type, '')
-            cost['generic'] = int(temp_mana_cost)
+            if temp_mana_cost != '':
+                cost['generic'] = int(temp_mana_cost)
+            else:
+                cost['generic'] = 0
 
             generic_paid = 0
-            temp_pay = pay
+            temp_pay = dict(pay)
             for mana_type in MANA_TYPES:
-                if mana_type in pay:
+                if mana_type in temp_pay:
                     temp_pay[mana_type] -= cost[mana_type]
                     if temp_pay[mana_type] < 0:
                         raise PayError("Not paying enough " + mana_type + "!")

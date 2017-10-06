@@ -32,11 +32,12 @@ class ManaPool:
 
     def tap(self, land):
         self.pool[LANDS[land]] += 1
+        return self
 
-    def spend(self, cost):
+    def spend(self, pay):
         for mana_type in MANA_TYPES:
-            if mana_type in cost:
-                if self.pool[mana_type] - cost[mana_type] < 0:
+            if mana_type in pay:
+                if self.pool[mana_type] - pay[mana_type] < 0:
                     raise ManaError(mana_type)
                 else:
-                    self.pool[mana_type] -= cost[mana_type]
+                    self.pool[mana_type] -= pay[mana_type]
