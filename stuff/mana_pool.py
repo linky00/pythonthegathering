@@ -1,9 +1,18 @@
+MANA_TYPES = [
+    'W',
+    'U',
+    'B',
+    'R',
+    'G'
+]
+
 DEFAULT_POOL = {
     'W': 0,
     'U': 0,
     'B': 0,
     'R': 0,
-    'G': 0}
+    'G': 0
+}
 
 LANDS = {
     'plains': 'W',
@@ -25,8 +34,9 @@ class ManaPool:
         self.pool[LANDS[land]] += 1
 
     def spend(self, cost):
-        for mana_type in ['W', 'U', 'B', 'R', 'G']:
-            if self.pool[mana_type] - cost[mana_type] < 0:
-                raise ManaError(mana_type)
-            else:
-                self.pool[mana_type] -= cost[mana_type]
+        for mana_type in MANA_TYPES:
+            if mana_type in cost:
+                if self.pool[mana_type] - cost[mana_type] < 0:
+                    raise ManaError(mana_type)
+                else:
+                    self.pool[mana_type] -= cost[mana_type]
