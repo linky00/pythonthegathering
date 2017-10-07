@@ -1,6 +1,6 @@
 # Python the Gathering
 
-Hey you! Is Python too easy to use? Are functions just a bit too convenient? Do you feel the need to inject some Magic the Gathering into your coding experience? Well, here's your 'solution'! (an actual solution would probably involve therapy and hugs)
+Hey, you! Is Python too easy to use? Are functions just a bit too convenient? Do you feel the need to inject some Magic the Gathering into your coding experience? Well, here's your 'solution'! (an actual solution would probably involve therapy and hugs)
 
 Oh yeah, if you don't actually play Magic, this is gonna get way too complicated way too fast. So... go learn it :grin:
 
@@ -12,7 +12,7 @@ Now, lets make ourselves a ManaPool. This stores our mana, which we need to cast
 ```python
 pool = ManaPool()
 ```
-Nice! Next, let's get make a spell. This is just a function with a decorator, but I'm calling it a spell from now on because if I don't, who will?
+Nice! Next, let's make a spell. This is just a function with a decorator, but I'm calling it a spell from now on because if I don't, who will?
 ```python
 @spell('3UB')
 def square(x):
@@ -20,7 +20,7 @@ def square(x):
 ```
 See that '3UB'? That means 'a blue (U), a black (B), and 3 generic mana'. In case you didn't know, 'U' in magic stands for 'blue', because 'B' is taken by 'black' and 'L' is taken by 'land'.
 
-Anway, this is all great. But how do we cast this spell? Well, first, we'll have to generate the mana. Let's generate the extra 3 mana using the other three colours, so I can show you all the lands you can tap!
+Anway, this is all great. But how do we cast this spell? Well, first, we'll have to generate the mana. Let's create the 3 generic mana using the other three colours, so I can show you all the lands you can tap!
 ```python
 pool.tap('plains')
 pool.tap('island')
@@ -34,7 +34,7 @@ pool.tap('plains').tap('island').tap('swamp').tap('mountain').tap('forest')
 ```
 But that's beside the point.
 
-Let's finally get round to casting this spell! Just call the spell like any other function, but remember to add mana_pool and mana_pay as keyword arguements.
+Let's finally get round to casting this spell! Just call the spell like any other function, but remember to add mana_pool and mana_pay as keyword arguments.
 ```python
 square(4, mana_pool=pool, mana_pay={'W': 1, 'U': 1, 'B': 1, 'R': 1, 'G': 1})
 ```

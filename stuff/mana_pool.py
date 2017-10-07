@@ -27,6 +27,9 @@ class ManaError(Exception):
         Exception.__init__(self, "Not enough mana of type {" + mana_type + "}!")
 
 class ManaPool:
+    """
+    You need this to cast spells!
+    """
     def __init__(self):
         self.pool = DEFAULT_POOL
 

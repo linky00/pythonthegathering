@@ -1,10 +1,13 @@
-from .stuff.mana_pool import MANA_TYPES, ManaPool
+from .mana_pool import MANA_TYPES
 
 class PayError(Exception):
     def __init__(self, message):
         Exception.__init__(self, message)
 
 def spell(mana_cost):
+    """
+    Decorator function to create spells!
+    """
     def decorator(func):
         def wrap(*args, **kwargs):
             mana_pool = kwargs['mana_pool']
