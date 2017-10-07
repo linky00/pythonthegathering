@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='pythonthegathering',
     packages=['pythonthegathering'],
-    version='1.1',
+    version='1.2',
     description='Replaces everything good and practical about Python with MTG!',
     author='Theo Hamilton/linky00',
     author_email='linky00@plotholestudios.com',
