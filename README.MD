@@ -4,7 +4,11 @@ Hey, you! Is Python too easy to use? Are functions just a bit too convenient? Do
 
 Oh yeah, if you don't actually play Magic, this is gonna get way too complicated way too fast. So... go learn it :grin:
 
-First, lets import our module! Until this is on pip, you'll just have to throw this folder into your project; it should work out fine.
+First, let's install the module! This is on the pypi now, so just go:
+```
+pip install pythonthegathering
+```
+Now we need to import it into our project. Just do the following:
 ```python
 from pythonthegathering import ManaPool, spell
 ```
